@@ -1,0 +1,36 @@
+body {
+    background-color: antiquewhite;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.blur-background {
+    position: relative;
+    z-index: 1;
+    background-color: antiquewhite;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#petList {
+    position: relative;
+    z-index: 1;
+    
+}
+
+.list-group-item{
+    position: relative;
+    z-index: 1;
+    background-color: antiquewhite;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.panel{
+    position: relative;
+    z-index: 1;
+    background-color: transparent
+}
