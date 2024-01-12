@@ -53,7 +53,7 @@
   "sourceMap": "57:476:1:-;;;104:10;81:33;;;;;;;;;;;;;;;;;;;;57:476;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:476:1;;;;;;;",
   "deployedSourceMap": "57:476:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:476:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;81:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;428:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;428:103:1;;;;;;;;;;;;;;;;;:::i;:::-;;118:36;;;;:::o;81:33::-;;;;;;;;;;;;;:::o;428:103::-;340:5;;;;;;;;;;;326:19;;:10;:19;;;311:101;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;517:9;490:24;:36;;;;428:103;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.5.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n\n//questo modificatore richiede che la funzione associata possa\n//essere eseguita solo dal proprietario del contratto owner\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "/Users/antoniopisu/Desktop/Università/Sicurezza dei Dati/petShop/contracts/Migrations.sol",
+  "sourcePath": "/Users/antoniopisu/Desktop/OpenSeaLite/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -909,12 +909,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x5E2402589bB0b6f4Fa8f30384f070a3bfA7f7597",
-      "transactionHash": "0xd741b195029be04f3a15afaea211656d3c70d8f9529eb67282801eaec4f37c63"
+      "address": "0xFA32BbA788153c89DC31711c75f2CB358d46F5Ef",
+      "transactionHash": "0xf08c4ca6809e3c9695e372b33d449ea4fc13b265ebc18314f81cb9f11f0afadd"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2023-12-07T15:03:41.354Z",
+  "updatedAt": "2024-01-12T09:35:09.319Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

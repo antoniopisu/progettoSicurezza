@@ -14,10 +14,20 @@ body {
     background-attachment: fixed;
 }
 
+.container{
+    width: fit-content;
+}
+
 #petList {
     position: relative;
     z-index: 1;
     
+}
+.list-group-item {
+    display: inline-block;
+    width: 48%; /* Regola la larghezza delle colonne */
+    margin: 1%; /* Aggiunto margine tra gli elementi */
+    box-sizing: border-box; /* Considera il bordo e il padding nella larghezza */
 }
 
 .list-group-item{
@@ -25,7 +35,7 @@ body {
     z-index: 1;
     background-color: antiquewhite;
     background-size: cover;
-    background-position: center;
+    background-position: auto;
     background-attachment: fixed;
 }
 
@@ -33,4 +43,8 @@ body {
     position: relative;
     z-index: 1;
     background-color: transparent
+}
+
+.pet-row{
+    width:fit-content;
 }
