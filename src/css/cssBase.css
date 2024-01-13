@@ -48,3 +48,12 @@ body {
 .pet-row{
     width:fit-content;
 }
+
+#login-btn{
+    margin-top: 25px;
+}
+
+#user-address{
+    margin-top: 25px;
+    font-size: 17px;
+}

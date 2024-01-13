@@ -8,7 +8,7 @@ App = {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
 
-      for (i = 0; i < data.length; i ++) {
+      for (i = 0; i < data.length; i++) {
         petTemplate.find('.panel-title').text(data[i].name);
         petTemplate.find('img').attr('src', data[i].picture);
         petTemplate.find('.pet-breed').text(data[i].breed);
@@ -25,26 +25,25 @@ App = {
 
   initWeb3: async function() {
     // Modern dapp browsers...
-if (window.ethereum) {
-  App.web3Provider = window.ethereum;
-  try {
-    // Request account access
-    await window.ethereum.enable();
-  } catch (error) {
-    // User denied account access...
-    console.error("User denied account access")
-  }
-}
-// Legacy dapp browsers...
-else if (window.web3) {
-  App.web3Provider = window.web3.currentProvider;
-}
-// If no injected web3 instance is detected, fall back to Ganache
-else {
-  App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-}
-web3 = new Web3(App.web3Provider);
-
+    if (window.ethereum) {
+      App.web3Provider = window.ethereum;
+      try {
+        // Request account access
+        await window.ethereum.enable();
+      } catch (error) {
+        // User denied account access...
+        console.error("User denied account access");
+      }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+      App.web3Provider = window.web3.currentProvider;
+    }
+    // If no injected web3 instance is detected, fall back to Ganache
+    else {
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+    }
+    web3 = new Web3(App.web3Provider);
 
     return App.initContract();
   },
@@ -54,39 +53,38 @@ web3 = new Web3(App.web3Provider);
       // Get the necessary contract artifact file and instantiate it with @truffle/contract
       var AdoptionArtifact = data;
       App.contracts.Adoption = TruffleContract(AdoptionArtifact);
-    
+
       // Set the provider for our contract
       App.contracts.Adoption.setProvider(App.web3Provider);
-    
+
       // Use our contract to retrieve and mark the adopted pets
       return App.markAdopted();
     });
-    
 
     return App.bindEvents();
   },
 
   bindEvents: function() {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $('#login-btn').on('click', App.handleLogin);
   },
 
   markAdopted: function() {
     var adoptionInstance;
 
-App.contracts.Adoption.deployed().then(function(instance) {
-  adoptionInstance = instance;
+    App.contracts.Adoption.deployed().then(function(instance) {
+      adoptionInstance = instance;
 
-  return adoptionInstance.getAdopters.call();
-}).then(function(adopters) {
-  for (i = 0; i < adopters.length; i++) {
-    if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-      $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
-    }
-  }
-}).catch(function(err) {
-  console.log(err.message);
-});
-
+      return adoptionInstance.getAdopters.call();
+    }).then(function(adopters) {
+      for (i = 0; i < adopters.length; i++) {
+        if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+        }
+      }
+    }).catch(function(err) {
+      console.log(err.message);
+    });
   },
 
   handleAdopt: function(event) {
@@ -96,27 +94,54 @@ App.contracts.Adoption.deployed().then(function(instance) {
 
     var adoptionInstance;
 
-web3.eth.getAccounts(function(error, accounts) {
-  if (error) {
-    console.log(error);
-  }
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
 
-  var account = accounts[0];
+      var account = accounts[0];
 
-  App.contracts.Adoption.deployed().then(function(instance) {
-    adoptionInstance = instance;
+      App.contracts.Adoption.deployed().then(function(instance) {
+        adoptionInstance = instance;
 
-    // Execute adopt as a transaction by sending account
-    return adoptionInstance.adopt(petId, {from: account});
-  }).then(function(result) {
-    return App.markAdopted();
-  }).catch(function(err) {
-    console.log(err.message);
-  });
-});
+        // Execute adopt as a transaction by sending account
+        return adoptionInstance.adopt(petId, { from: account });
+      }).then(function(result) {
+        return App.markAdopted();
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+    });
+  },
 
-  }
-
+  handleLogin: function() {
+    // Controlla se MetaMask è installato
+    if (typeof window.ethereum !== 'undefined') {
+      // Chiedi all'utente il permesso di accedere con MetaMask
+      ethereum.request({ method: 'eth_requestAccounts' })
+        .then(function(accounts) {
+          // L'utente ha dato il permesso, puoi ora accedere con MetaMask
+          var userAddress = accounts[0];
+          alert('Login effettuato con MetaMask. Indirizzo: ' + userAddress);
+  
+          // Nascondi il pulsante di login
+          $('#login-btn').hide();
+  
+          // Mostra l'indirizzo utente
+          $('#user-address').text('Address: ' + userAddress);
+          $('#user-info').show();
+        })
+        .catch(function(error) {
+          // L'utente ha negato il permesso o c'è un errore
+          console.error(error);
+          alert('Errore durante il login con MetaMask.');
+        });
+    } else {
+      // MetaMask non è installato
+      alert('MetaMask non è installato. Installa MetaMask per effettuare il login.');
+    }
+  },
+  
 };
 
 $(function() {
@@ -124,3 +149,5 @@ $(function() {
     App.init();
   });
 });
+
+
