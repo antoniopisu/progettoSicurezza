@@ -1,202 +1,177 @@
 [
   {
     "id": 0,
-    "name": "#Lion1",
+    "name": "#Fox1",
     "picture": "images/lion1.jpg",
-    "age": 3,
-    "breed": "Scottish Terrier",
+    "collection": "Fox",
     "location": "Lisco, Alabama"
   },
   {
     "id": 1,
-    "name": "#Lion2",
+    "name": "#Fox2",
     "picture": "images/lion2.jpg",
-    "age": 3,
-    "breed": "Scottish Terrier",
+    "collection": "Fox",
     "location": "Tooleville, West Virginia"
   },
   {
     "id": 2,
-    "name": "#Lion3",
+    "name": "#Fox3",
     "picture": "images/Lion3.jpg",
-    "age": 2,
-    "breed": "French Bulldog",
+    "collection": "Fox",
     "location": "Freeburn, Idaho"
   },
   {
     "id": 3,
-    "name": "#Lion4",
+    "name": "#Fox4",
     "picture": "images/lion4.jpg",
-    "age": 2,
-    "breed": "Boxer",
+    "collection": "Fox",
     "location": "Camas, Pennsylvania"
   },
   {
     "id": 4,
-    "name": "#Lion5",
+    "name": "#Lion1",
     "picture": "images/lion5.jpg",
-    "age": 2,
-    "breed": "French Bulldog",
+    "collection": "Lion",
     "location": "Gerber, South Dakota"
   },
   {
     "id": 5,
-    "name": "#Lion6",
+    "name": "#Lion2",
     "picture": "images/lion6.jpg",
-    "age": 3,
-    "breed": "French Bulldog",
+    "collection": "Lion",
     "location": "Innsbrook, Illinois"
   },
   {
     "id": 6,
-    "name": "#Lion7",
+    "name": "#Lion3",
     "picture": "images/lion7.jpg",
-    "age": 3,
-    "breed": "Golden Retriever",
+    "collection": "Lion",
     "location": "Soudan, Louisiana"
   },
   {
     "id": 7,
-    "name": "#Lion8",
+    "name": "#Lion4",
     "picture": "images/lion8.jpg",
-    "age": 3,
-    "breed": "Golden Retriever",
+    "collection": "Lion",
     "location": "Jacksonwald, Palau"
   },
   {
     "id": 8,
-    "name": "#Lion9",
+    "name": "#Fox5",
     "picture": "images/lion9.jpg",
-    "age": 2,
-    "breed": "French Bulldog",
+    "collection": "Fox",
     "location": "Honolulu, Hawaii"
   },
   {
     "id": 9,
     "name": "#Penguin1",
     "picture": "images/penguin1.jpg",
-    "age": 3,
-    "breed": "Boxer",
+    "collection": "Penguin",
     "location": "Matheny, Utah"
   },
   {
     "id": 10,
     "name": "#Penguin2",
     "picture": "images/penguin2.jpg",
-    "age": 2,
-    "breed": "Boxer",
+    "collection": "Penguin",
     "location": "Tyhee, Indiana"
   },
   {
     "id": 11,
     "name": "#Penguin3",
     "picture": "images/Penguin3.jpg",
-    "age": 3,
-    "breed": "Scottish Terrier",
+    "collection": "Penguin",
     "location": "Windsor, Montana"
   },
   {
     "id": 12,
     "name": "#Penguin4",
     "picture": "images/penguin4.jpg",
-    "age": 3,
-    "breed": "French Bulldog",
+    "collection": "Penguin",
     "location": "Kingstowne, Nevada"
   },
   {
     "id": 13,
     "name": "#Bear1",
     "picture": "images/bear1.jpg",
-    "age": 4,
-    "breed": "Golden Retriever",
+    "collection": "Penguin",
     "location": "Sultana, Massachusetts"
   },
   {
     "id": 14,
     "name": "#PoliceDog1",
     "picture": "images/dogPolice1.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "PoliceDog",
     "location": "Broadlands, Oregon"
   },
   {
     "id": 15,
     "name": "#PoliceDog2",
     "picture": "images/dogPolice2.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "PoliceDog",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 16,
     "name": "#PoliceDog3",
     "picture": "images/dogPolice3.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "PoliceDog",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 17,
     "name": "#PoliceDog4",
     "picture": "images/dogPolice4.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "PoliceDog",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 18,
     "name": "#Dog&Co1",
     "picture": "images/dog&co.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Dog&Co",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 19,
     "name": "#Giraffe1",
     "picture": "images/giraffe1.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Giraffe",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 20,
     "name": "#Giraffe2",
     "picture": "images/giraffe2.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Giraffe",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 21,
     "name": "#Giraffe3",
     "picture": "images/giraffe3.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Giraffe",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 22,
     "name": "#HorsePunk1",
     "picture": "images/horse1.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Punk Horse",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 23,
     "name": "#HorsePunk2",
     "picture": "images/horse2.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Punk Horse",
     "location": "Dawn, Wisconsin"
   },
   {
     "id": 23,
     "name": "#HorsePunk3",
     "picture": "images/horse3.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
+    "collection": "Punk Horse",
     "location": "Dawn, Wisconsin"
   }
 
