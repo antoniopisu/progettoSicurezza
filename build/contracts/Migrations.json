@@ -53,7 +53,7 @@
   "sourceMap": "57:476:1:-;;;104:10;81:33;;;;;;;;;;;;;;;;;;;;57:476;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:476:1;;;;;;;",
   "deployedSourceMap": "57:476:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:476:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;81:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;428:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;428:103:1;;;;;;;;;;;;;;;;;:::i;:::-;;118:36;;;;:::o;81:33::-;;;;;;;;;;;;;:::o;428:103::-;340:5;;;;;;;;;;;326:19;;:10;:19;;;311:101;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;517:9;490:24;:36;;;;428:103;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.5.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n\n//questo modificatore richiede che la funzione associata possa\n//essere eseguita solo dal proprietario del contratto owner\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "/Users/antoniopisu/Desktop/OpenSeaLite/contracts/Migrations.sol",
+  "sourcePath": "/Users/antoniopisu/Desktop/Università/Sicurezza dei Dati/progetti_scartati/OpenSeaLite/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -909,12 +909,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x74475A5C74D157dB5b649759524bB62c0469c7E8",
-      "transactionHash": "0xbb1787b95521cd1d9ddb59ac0f9293e4a7bccd471c2e7e446efe98b847277c63"
+      "address": "0x676802798484F4A01Ad2E048b8fab3e71C009B8F",
+      "transactionHash": "0x35a4c0debafac6fb367a54584106e06208cefc4653f2c8882e8bab8aaf91e667"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-01-14T16:02:47.613Z",
+  "updatedAt": "2024-02-20T11:18:18.193Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

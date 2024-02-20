@@ -66,6 +66,7 @@ App = {
 
   bindEvents: function() {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $(document).on('click', '.btn-buy', App.handleBuy);
     $('#login-btn').on('click', App.handleLogin);
   },
 
@@ -95,24 +96,51 @@ App = {
     var adoptionInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+            console.log(error);
+        }
+
+        var account = accounts[0];
+
+        App.contracts.Adoption.deployed().then(function(instance) {
+            adoptionInstance = instance;
+
+            // Esegui l'acquisto come transazione inviando l'account
+            return adoptionInstance.methods.adopt(petId).send({ from: account });
+        }).then(function(result) {
+            return App.markAdopted();
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    });
+},
+handleBuy: function(event) {
+  event.preventDefault();
+
+  var petId = parseInt($(event.target).data('id'));
+
+  var adoptionInstance;
+
+  web3.eth.getAccounts(function(error, accounts) {
       if (error) {
-        console.log(error);
+          console.log(error);
       }
 
       var account = accounts[0];
 
       App.contracts.Adoption.deployed().then(function(instance) {
-        adoptionInstance = instance;
+          adoptionInstance = instance;
 
-        // Execute adopt as a transaction by sending account
-        return adoptionInstance.adopt(petId, { from: account });
+          // Esegui l'acquisto come transazione inviando l'account
+          return adoptionInstance.methods.adopt(petId).send({ from: account });
       }).then(function(result) {
-        return App.markAdopted();
+          return App.markAdopted();
       }).catch(function(err) {
-        console.log(err.message);
+          console.log(err.message);
       });
-    });
-  },
+  });
+},
+
 
   handleLogin: function() {
     // Controlla se MetaMask è installato
